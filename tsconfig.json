@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM"],
+    "types": ["node"],
+
+    /* Strict throughout. The suite is small enough that there is no reason to
+       opt out, and the page objects are the main beneficiary: a locator typed
+       as `Locator` rather than `any` catches a mistyped method at compile time
+       instead of at test runtime. */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Playwright transpiles the tests itself, so tsc is only ever used for
+       type checking (`npm run typecheck`). Nothing is emitted. */
+    "noEmit": true
+  },
+  "include": ["tests/**/*.ts", "playwright.config.ts"]
+}

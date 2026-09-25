@@ -1,0 +1,19 @@
+{
+  "name": "glopros-vacancy-search-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "description": "End-to-end automation for the GloPros vacancy search journey",
+  "scripts": {
+    "test": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:report": "playwright show-report",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}
