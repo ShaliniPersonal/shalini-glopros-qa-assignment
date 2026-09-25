@@ -123,16 +123,20 @@ the DOM instead of from a pattern. An assertion that the percentage is at most
 
 ## Note on AI use
 
-**What I used it for.** I worked with Claude throughout: exploring the live
-application to establish locators, generating the first draft of the page
-objects, config and workflow, and reviewing my own test design. The bulk of the
-prose in the comments and this README was drafted in conversation and then
-edited.
+**What I used it for**
 
-**What I changed or rejected.** Four things are mine rather than the model's.
-It initially proposed asserting that the first card's title contains "Software
-Engineer", which the environment's seed data breaks — I replaced that with the
-shape assertions described above.
+I worked with Claude throughout: exploring the live application to establish
+locators, generating the first draft of the page objects, config and workflow,
+and reviewing my own test design. The bulk of the prose in the comments and
+this README was drafted in conversation and then edited.
+
+**What I changed or rejected**
+
+Three things are mine rather than the model's.
+
+The first is the card assertions. It proposed checking that the first card's
+title contains "Software Engineer", which the environment's seed data breaks —
+I replaced that with the shape assertions described above.
 
 The second is finding 4, and it is the one I would point at. Using the
 application, I noticed that results appeared as I typed and that clicking the
@@ -153,12 +157,13 @@ separately — measured on the live environment, the URL changed 933 ms after th
 click and the search form did not exist until 1880 ms. For almost a second the
 assertion passes and there is nothing to interact with.
 
-**What I would not delegate.** Deciding what is worth asserting. The model will
-happily generate a test for anything, including assertions that cannot fail —
-an earlier draft checked that the results page shows results before any filter
-is applied, which is true of the page on load and therefore proves nothing
-about searching. Knowing which assertions carry signal is the part of this job
-that does not transfer.
+**What I would not delegate**
+
+Deciding what is worth asserting. The model will happily generate a test for
+anything, including assertions that cannot fail — an earlier draft checked that
+the results page shows results before any filter is applied, which is true of
+the page on load and therefore proves nothing about searching. Knowing which
+assertions carry signal is the part of this job that does not transfer.
 
 ## CI
 
