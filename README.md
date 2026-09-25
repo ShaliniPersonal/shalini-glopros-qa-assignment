@@ -4,6 +4,11 @@ End-to-end automation for the vacancy search journey on the GloPros review
 environment, written with Playwright and TypeScript and organised with the
 Page Object Model.
 
+[![E2E Tests](https://github.com/ShaliniPersonal/shalini-glopros-qa-assignment/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/ShaliniPersonal/shalini-glopros-qa-assignment/actions/workflows/tests.yml)
+
+> **Note on the badge.** The review environment has been decommissioned, 
+> so CI runs now fail at the first navigation rather than on any assertion.
+
 ## Install
 
 ```bash
