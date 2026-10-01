@@ -52,11 +52,15 @@ Feature: Vacancy search edge cases
     And I should be able to run a normal search afterwards
 
   @documented
-  Scenario: Script-like input is treated as text and not executed as code
-    When I enter "<script>window.__xss = true;</script>" as the main job title
+  # The payload uses an onerror handler rather than a <script> tag deliberately.
+  # A script element created by parsing an HTML string never executes, so a
+  # <script> payload would satisfy the last step even against an application
+  # that renders the input as markup. A broken image src fires immediately.
+  Scenario: Markup in the job title is rendered as text and not executed
+    When I enter "<img src=x onerror=\"window.__xss = true\">" as the main job title
     And I submit the search using the search-icon button
     Then the input should be echoed as plain text
-    And no script from the input should have executed
+    And no handler from the input should have executed
 
   # ---------------------------------------------------------------------------
   # Filters and alternatives

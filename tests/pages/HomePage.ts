@@ -11,7 +11,7 @@ export class HomePage {
 
   constructor(page: Page) {
     this.page = page;
-    this.vacancySearchButton = page.getByRole('link', { name: 'Vacancy search' });
+    this.vacancySearchButton = page.getByRole('button', { name: 'Vacancy search' });
   }
 
   async open() {

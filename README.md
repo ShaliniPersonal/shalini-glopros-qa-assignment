@@ -6,9 +6,6 @@ Page Object Model.
 
 [![E2E Tests](https://github.com/ShaliniPersonal/shalini-glopros-qa-assignment/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/ShaliniPersonal/shalini-glopros-qa-assignment/actions/workflows/tests.yml)
 
-> **Note on the badge.** The review environment has been decommissioned, 
-> so CI runs now fail at the first navigation rather than on any assertion.
-
 ## Install
 
 ```bash
@@ -56,7 +53,7 @@ features/
 | Filter defaults (automated) | Location empty and distance at 100 km, asserted both before and after submitting |
 | Input equivalence (automated) | A lowercase job title and one padded with whitespace both return a match count comparable to the canonical title's — compared within a tolerance, since the environment's data shifts between the two readings |
 | Core behaviour (documented) | Reaching vacancy search directly by URL, results shown before any filter, changing the title changes the count, the distance range, and the job title appearing in the URL while typing |
-| Input handling (documented) | Zero-match terms, over-long input, script-like input |
+| Input handling (documented) | Zero-match terms, over-long input, markup in the job title |
 | Filters and alternatives (documented) | Location narrowing, distance narrowing, talent search, AI search |
 | URL and navigation (documented) | Reload restores the search, browser back, clearing the title clears the parameter |
 | Accessibility (documented) | Accessible name on the submit button, labelled inputs, keyboard-only completion, card metadata exposed to assistive technology |
